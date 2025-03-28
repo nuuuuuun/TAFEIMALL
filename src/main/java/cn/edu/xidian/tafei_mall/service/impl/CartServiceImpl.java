@@ -5,6 +5,7 @@ import cn.edu.xidian.tafei_mall.mapper.CartMapper;
 import cn.edu.xidian.tafei_mall.service.CartService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import java.util.UUID;
 
 /**
  * <p>
@@ -16,5 +17,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements CartService {
-
+  @Override
+    public boolean save(Cart cart) {
+        if (cart.getCartId() == null) {
+            cart.setCartId(UUID.randomUUID().toString());
+        }
+        return super.save(cart);
+    }
 }

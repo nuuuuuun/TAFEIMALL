@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2025-03-17
  */
 public interface CartService extends IService<Cart> {
-
+  Cart createCart(String userId);
 }

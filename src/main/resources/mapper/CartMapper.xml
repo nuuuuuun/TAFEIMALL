@@ -15,4 +15,9 @@
         cart_id, user_id, created_at, updated_at
     </sql>
 
+    <insert id="insertCart" parameterType="cn.edu.xidian.tafei_mall.model.entity.Cart">
+        INSERT INTO cart (cart_id, user_id, created_at, updated_at)
+        VALUES (#{cartId}, #{userId}, #{createdAt}, #{updatedAt})
+    </insert>
+
 </mapper>

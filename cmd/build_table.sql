@@ -42,7 +42,7 @@ CREATE TABLE `product` (
 
 -- 购物车表
 CREATE TABLE `cart` (
-                        `cart_id` VARCHAR(36) NOT NULL COMMENT '购物车ID',
+                        `cart_id` VARCHAR(36) NOT NULL DEFAULT (UUID()) COMMENT '购物车ID',
                         `user_id` VARCHAR(36) NOT NULL COMMENT '用户ID',
                         `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
                         `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',

@@ -3,7 +3,11 @@ package cn.edu.xidian.tafei_mall.controller;
 import cn.edu.xidian.tafei_mall.model.vo.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.*;
+import cn.edu.xidian.tafei_mall.model.entity.Cart;
+import cn.edu.xidian.tafei_mall.service.CartService;
+
 import java.util.Map;
+import java.util.List;
 
 
 /**
@@ -19,8 +23,13 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/cart")
-public class CartController {
+public class CartController{
+    private final CartService cartService;
 
+    public CartController(CartService cartService) {
+        this.cartService = cartService;
+    }
+    
     @GetMapping
     public ResponseEntity<?> getCartContents() {
         // Implement get cart contents logic
